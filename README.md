@@ -1,16 +1,101 @@
-# React + Vite
+# Cent Graphics
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fullstack color palette web app for designers. Browse curated palettes, copy hex codes instantly, and save your favorites to a personal collection.
 
-Currently, two official plugins are available:
+**Live Demo:** [cent-graphics.vercel.app](https://cent-graphics.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Browse 6 color editions with 18 curated palettes
+- Copy hex codes with one click
+- Save palettes to your personal collection
+- Register and login with JWT authentication
+- Responsive page adaptation
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+**Frontend**
+
+- React + Vite
+- React Router
+- CSS (per component)
+
+**Backend**
+
+- Node.js + Express
+- MongoDB Atlas + Mongoose
+- JWT + bcrypt
+
+**Deploy**
+
+- Frontend → Vercel
+- Backend → Railway
+
+---
+
+## Project Structure
+
+```
+cent-graphics/
+├── client/          # React frontend
+│   └── src/
+│       ├── api/     # Centralized API calls
+│       ├── components/
+│       │   ├── auth/
+│       │   ├── collection/
+│       │   ├── data/
+│       │   ├── home/
+│       │   └── navbar/
+│       └── App.jsx
+│
+└── server/          # Express backend
+    ├── controllers/
+    ├── middlewares/
+    ├── models/
+    ├── routes/
+    └── app.js
+```
+
+---
+
+## API Endpoints
+
+| Method | Endpoint               | Auth | Description            |
+| ------ | ---------------------- | ---- | ---------------------- |
+| POST   | /api/auth/register     | No   | Register new user      |
+| POST   | /api/auth/login        | No   | Login, returns JWT     |
+| GET    | /api/palettes          | No   | Get all palettes       |
+| POST   | /api/palettes          | Yes  | Submit new palette     |
+| POST   | /api/palettes/:id/save | Yes  | Save to collection     |
+| DELETE | /api/palettes/:id/save | Yes  | Remove from collection |
+
+---
+
+## Run Locally
+
+**Backend**
+
+```bash
+cd server
+npm install
+# create .env with MONGO_URI and JWT_SECRET
+npm run dev
+```
+
+**Frontend**
+
+```bash
+cd client
+npm install
+npm run dev
+```
+
+---
+
+## Built By
+
+Vincent — Former design editor turned fullstack developer.
