@@ -1,0 +1,122 @@
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-pink-pastel) 0%, var(--color-blue-pastel) 50%, var(--color-mint-pastel) 100%);
+    padding: 2rem;
+}
+
+.auth-card {
+    background: white;
+    border-radius: 2rem;
+    padding: 4rem;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.auth-card h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin: 0 0 0.5rem 0;
+}
+
+.auth-subtitle {
+    font-size: 1.4rem;
+    color: #666;
+    margin: 0 0 3rem 0;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 1.2rem 1.6rem;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 1rem;
+    font-size: 1.4rem;
+    font-family: var(--font-primary);
+    color: var(--color-dark);
+    background: #fafafa;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.auth-form input:focus {
+    border-color: var(--color-blue);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    background: white;
+}
+
+.auth-form input::placeholder {
+    color: #aaa;
+}
+
+.auth-submit-btn {
+    width: 100%;
+    padding: 1.4rem;
+    background: var(--color-dark);
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: var(--font-primary);
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+    margin-top: 0.5rem;
+}
+
+.auth-submit-btn:hover {
+    background: #333;
+    transform: translateY(-1px);
+}
+
+.auth-submit-btn:active {
+    transform: translateY(0);
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.3rem;
+    color: #666;
+    cursor: pointer;
+}
+
+.auth-switch span {
+    color: var(--color-blue);
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.auth-switch span:hover {
+    color: var(--color-navy);
+}
+
+.auth-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #e0e0e0;
+}
+
+.auth-divider span {
+    font-size: 1.2rem;
+    color: #aaa;
+}
